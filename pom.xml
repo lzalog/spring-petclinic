@@ -147,6 +147,9 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
         <version>3.1.0</version>
+        <configuration>
+          <warName>petclinic</warName>
+        </configuration>
         <executions>
           <execution>
             <id>default-war</id>
@@ -191,7 +194,7 @@
           </execution>
         </executions>
       </plugin>
-      <!-- <plugin>
+      <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
         <executions>
@@ -209,7 +212,7 @@
             </configuration>
           </execution>
         </executions>
-      </plugin> -->
+      </plugin>
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
@@ -341,6 +344,7 @@
         </property>
       </activation>
       <build>
+        <finalName>petclinic-app</finalName>
         <pluginManagement>
           <plugins>
             <!-- This plugin's configuration is used to store Eclipse m2e settings
