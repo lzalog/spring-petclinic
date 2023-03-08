@@ -1,23 +1,13 @@
 schemaVersion: 2.2.0
 attributes:
   space:
-    instanceType: large
     editor:
       type: Idea
     warmup:
+      # Warm-up trigger
+      # Run warm-up on git push to the main branch
       startOn:
       - type: gitPush
-      script: |
-        ./dev-env-warmup.sh
-#components:
-#- name: dev-container
-#  container:
-#    image: demo.registry.jetbrains.space/p/blossom/containers/devenv-bookingservice:latest
-      
-# or build from Dckerfile directly:
-components:
-- name: image-build
-  image:
-      imageName: bookingservice:latest
-      dockerfile:
-        uri: .space/Dockerfile
+        branchFilter:
+          include:
+          - 'refs/heads/main'
