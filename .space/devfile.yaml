@@ -11,3 +11,4 @@ attributes:
         branchFilter:
           include:
           - 'refs/heads/main'
+          script: gradlew build -x test
