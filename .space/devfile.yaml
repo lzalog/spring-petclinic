@@ -21,8 +21,6 @@ attributes:
           - 'refs/heads/main'
       script: |
         ./gradlew assemble
-        ./scripts/warmup.sh
-components:
-- name: my-devenv-container
-  container:
-    image: mycompany.registry.jetbrains.space/p/myprj/container/dev-image:latest
+        ./scripts/warmup.sh  
+      updateChannel: Release
+
