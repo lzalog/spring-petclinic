@@ -1,6 +1,28 @@
 schemaVersion: 2.2.0
 attributes:
   space:
-    editor: Idea Release
-    instanceType: large
-    projectRoot: build.gradle
+    instanceType: regular
+    editor:
+      type: Idea
+      version: '2022.1'
+    # The resulting warm-up snapshot will contain
+    # project indexes for IDEA 2022.1 and
+    # data created by './gradlew assemble' and './scripts/warmup.sh'.
+    # The warmup will run in the 'my-devenv-container' specified below.
+    warmup:
+      # The warm-up will run on git push to the main branch
+      # and on schedule - every Sunday (UTC)
+      startOn:
+      - type: schedule
+        cron: '0 0 0 ? * SUN *'
+      - type: gitPush
+        branchFilter:
+          include:
+          - 'refs/heads/main'
+      script: |
+        ./gradlew assemble
+        ./scripts/warmup.sh
+components:
+- name: my-devenv-container
+  container:
+    image: mycompany.registry.jetbrains.space/p/myprj/container/dev-image:latest
