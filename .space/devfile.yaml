@@ -1,26 +1,24 @@
 schemaVersion: 2.2.0
 attributes:
   space:
-    instanceType: regular
+    instanceType: large
     editor:
       type: Idea
-      version: '2022.1'
-    # The resulting warm-up snapshot will contain
-    # project indexes for IDEA 2022.1 and
-    # data created by './gradlew assemble' and './scripts/warmup.sh'.
-    # The warmup will run in the 'my-devenv-container' specified below.
     warmup:
-      # The warm-up will run on git push to the main branch
-      # and on schedule - every Sunday (UTC)
       startOn:
       - type: schedule
-        cron: '0 0 0 ? * SUN *'
-      - type: gitPush
-        branchFilter:
-          include:
-          - 'refs/heads/main'
+        cron: '0 5 * * *'
       script: |
-        ./gradlew assemble
-        ./scripts/warmup.sh  
-      updateChannel: Release
-
+        ./dev-env-warmup.sh
+components:
+- name: dev-container
+  container:
+    image: demo.registry.jetbrains.space/p/blossom/containers/devenv-bookingservice:latest
+      
+# or build from Dckerfile directly:
+#components:
+#- name: image-build
+#  image:
+#      imageName: bookingservice:latest
+#      dockerfile:
+#        uri: .space/Dockerfile
