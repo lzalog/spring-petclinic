@@ -8,7 +8,4 @@ attributes:
       # Run warm-up on git push to the main branch
       startOn:
       - type: gitPush
-        branchFilter:
-          include:
-          - 'refs/heads/main'
-          script: gradlew build -x test
+      script: gradlew build -x test
