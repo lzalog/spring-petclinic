@@ -6,8 +6,7 @@ attributes:
       type: Idea
     warmup:
       startOn:
-      - type: schedule
-        cron: '0 5 * * *'
+      - type: gitPush
       script: |
         ./dev-env-warmup.sh
 #components:
