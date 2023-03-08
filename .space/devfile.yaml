@@ -10,15 +10,15 @@ attributes:
         cron: '0 5 * * *'
       script: |
         ./dev-env-warmup.sh
-components:
-- name: dev-container
-  container:
-    image: demo.registry.jetbrains.space/p/blossom/containers/devenv-bookingservice:latest
+#components:
+#- name: dev-container
+#  container:
+#    image: demo.registry.jetbrains.space/p/blossom/containers/devenv-bookingservice:latest
       
 # or build from Dckerfile directly:
-#components:
-#- name: image-build
-#  image:
-#      imageName: bookingservice:latest
-#      dockerfile:
-#        uri: .space/Dockerfile
+components:
+- name: image-build
+  image:
+      imageName: bookingservice:latest
+      dockerfile:
+        uri: .space/Dockerfile
