@@ -5,6 +5,10 @@ attributes:
   space:
     editor:
       type: Idea
+      # the config appends to the default .vmoptions
+      vmoptions:
+      - '-Xms2048m'
+      - '-Xmx4096m'
       updateChannel: Release
     warmup:
       startOn:
