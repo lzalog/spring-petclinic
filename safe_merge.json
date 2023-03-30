@@ -1,0 +1,16 @@
+{
+    "version": "1.0",
+    "retry-policy": {
+        "num-retries": 3,
+        "reuse-merge": true
+    },
+    "builds": [
+        {
+            "teamcity": {
+                "configuration": "SpringPetclinic_Build",
+                "url": "https://tcdemo.teamcity.com",
+                "token": "${tc-secret}"
+            }
+        }
+    ]
+}
