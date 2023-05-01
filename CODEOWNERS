@@ -1,0 +1,8 @@
+# John handles Gradle files
+*.gradle John.Doe
+
+# Sarah handles the source code
+src Sarah.Connor
+
+# CODEOWNERS file is for Project Admins
+CODEOWNERS "Project Admin"
