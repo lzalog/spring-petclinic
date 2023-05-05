@@ -2,7 +2,7 @@
 *.gradle John.Doe
 
 # Sarah handles the source code
-src Sarah.Connor
+src Admin
 
 # CODEOWNERS file is for Project Admins
 CODEOWNERS "Project Admin"
