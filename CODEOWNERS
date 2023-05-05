@@ -1,5 +1,5 @@
 # John handles Gradle files
-*.gradle John.Doe
+*.gradle Admin
 
 # Sarah handles the source code
 src Admin
