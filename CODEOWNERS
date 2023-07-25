@@ -2,6 +2,6 @@
 *.gradle John.Doe
 
 # Sarah handles the source code
-src Leonid Zalog TEST
+src Leonid Zalog TEST 2
 # CODEOWNERS file is for Project Admins
 CODEOWNERS "Project Admin"
